@@ -123,8 +123,6 @@ This project is featured in my portfolio to highlight my skills in:
 - **Testing and Reliability**: Writing robust unit tests with mock callouts to ensure code quality.
 - **Asynchronous Processing**: Implementing `@future` methods for efficient API handling.
 
-View the project on GitHub: [github.com/your-username/google-drive-salesforce-integration](https://github.com/your-username/google-drive-salesforce-integration)
-
 ## Contributing
 Contributions are welcome! To contribute:
 1. Fork the repository.
