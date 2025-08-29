@@ -1,0 +1,19 @@
+{
+  "packageDirectories": [
+    {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "force-app",
+      "default": true,
+      "package": "GoogleDriveIntegration",
+      "versionDescription": "Google drive Integration with Account Object Records"
+    }
+  ],
+  "name": "GDINT",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "64.0",
+  "packageAliases": {
+    "GoogleDriveIntegration": "0HogL0000000K6nSAE"
+  }
+}

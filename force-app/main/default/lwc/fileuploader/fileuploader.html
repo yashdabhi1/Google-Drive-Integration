@@ -1,0 +1,52 @@
+<template>
+    <div class="container">
+        <div class="slds-page-header slds-page-header_record-home">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:file" size="small" alternative-text="Attachment" title="Attachment"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <span>Google Drive File Upload</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-p-around_small">
+            <template if:true={hasFolder}>
+                <lightning-input type="file" label="Upload File" onchange={handleFileChange}></lightning-input>
+                <div class="slds-m-top_x-small" if:true={selectedFileName} for:index="index">
+                    <div class="slds-box">
+                        <div class="slds-clearfix slds-p-around_x-small" >
+                            <div class="slds-float_left slds-list_horizontal"> 
+                                <p>{selectedFileName}</p>
+                            </div>
+                            <div class="slds-float_right">
+                                <lightning-layout-item>
+                                    <lightning-button-icon  size="x-small" icon-name="utility:delete" onclick={handleRemoveFile} variant="destructive" disabled={isRemoveDisabled}></lightning-button-icon>
+                                </lightning-layout-item>
+                            </div>
+                        </div>
+                    </div>
+                    <lightning-button label="Upload File" onclick={handleUpload} class="slds-m-top_small slds-align_absolute-center" disabled={isUploadDisabled}></lightning-button>
+                </div>
+            </template>
+            <template if:false={hasFolder}>
+                <div class="slds-text-color_error slds-m-bottom_medium">
+                    No Google Drive folder exists for this Account.
+                </div>
+                <lightning-button label="Create Folder" onclick={handleCreateFolder}></lightning-button>
+            </template>
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..."></lightning-spinner>
+            </template>
+            <template if:true={error}>
+                <div class="slds-text-color_error">{error}</div>
+            </template>
+        </div>
+    </div>
+</template>
